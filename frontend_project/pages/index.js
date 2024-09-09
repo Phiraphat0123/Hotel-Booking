@@ -1,7 +1,7 @@
 
 import localFont from "next/font/local";
-import Navbar from "@/components/Navbar";
-// import styles from "@/styles/Home.module.css";
+import style from "@/styles/Home.module.css";
+import Head from "next/head";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -16,9 +16,16 @@ import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <>
-      <Navbar/>
-      <h1>hello world</h1>
-    </>
+    <div className={style.home_container}>
+      <Head>
+        <title> Home | Hotel</title>
+        <meta name="keywords" content="Hotel,Phiraphat" />
+      </Head>
+      <div>
+        <h1>
+            Home page
+        </h1>
+      </div>
+    </div>
   );
 }
