@@ -14,6 +14,7 @@ app.use(express.urlencoded({extended: false}))
 
 // routers api
 app.use('/api/hotels',require('./routes/api/hotels'))
+app.use('/api/transaction',require('./routes/api/transaction'))
 
 
 app.listen(PORT, ()=> console.log(`server is running on port ${PORT}`))
