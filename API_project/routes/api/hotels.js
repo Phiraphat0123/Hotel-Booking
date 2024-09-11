@@ -7,16 +7,29 @@ const uuid = require('uuid')
 // get hotels data
 router.get("/",(req,res)=>{
     
-    res.status(200).json(hotels)
+    let newFormatHotels=[...hotels]
+    // new format
+    newFormatHotels = newFormatHotels.map(hotel=>{
+        let hotelInfo={
+
+            id:hotel.id,
+            name:hotel.name,
+            location:hotel.location,
+            image:hotel.image
+        }
+        return hotelInfo
+    })
+
+    res.status(200).json(newFormatHotels)
 })
 
 router.get("/detail/:id",(req,res)=>{
     const id =req.params.id
-    let hotelFilter = hotels.filter(hotel=>{
+    let [hotelFilter] = hotels.filter(hotel=>{
         return hotel.id===parseInt(id)
     })
     // console.log(hotelFilter)
-    if(hotelFilter.length!=0)res.status(200).json(hotelFilter);
+    if(hotelFilter!=undefined)res.status(200).json(hotelFilter);
     else res.status(404).json({msg:`not found hotel id : ${id}`})
     
 })

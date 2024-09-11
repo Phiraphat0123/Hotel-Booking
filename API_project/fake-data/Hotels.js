@@ -151,7 +151,45 @@ const  hotels =[
         images:[
             "main.png"
         ]
-    },
+    }
+    ,
+    {
+        id:5,
+        name:"The Langham, Chicago",
+        location:"Chicago",
+        roomTypes:[
+            {
+                roomId:1,
+                name:"normal room",
+                price:500,
+                night:1,
+                support:1,
+                status:false,
+                discount:0
+            }
+        ],
+        reviews:{
+            amount:6879,
+            avg:8.4,
+            houseKeeping:4,
+            food:4.5,
+            service:4,
+            staff:4
+        },
+        service:{
+            car:true,
+            bath:true,
+            drink:true,
+            wifi:true,
+            gym:true
+        },
+        policy:"this is policy ",
+        image:"main.png",
+        images:[
+            "main.png"
+        ]
+        
+    }
 ]
 
 module.exports  = hotels
