@@ -1,14 +1,15 @@
 import Image from "next/image"
+import styles from "@/styles/Explore.module.css"
 export default function SearchItem (){
 
     return (
-        <div>
+        <div className={styles.search_item}>
             {/* img */}
-            <div>
-                <Image src="" width={198} height={173} alt="search-item"/>
+            <div className={styles.item_img_wrapper}>
+                <Image src="/example_img.png" width={198} height={173} alt="search-item"/>
             </div>
             {/* infor */}
-            <div>
+            <div className={styles.item_info_wrapper}>
                 <div>
                     <div>
                         <h5>

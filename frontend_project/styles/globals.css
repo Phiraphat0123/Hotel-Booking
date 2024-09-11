@@ -18,6 +18,7 @@ nav{
   align-items: center;
   padding: 40px;
   box-sizing: border-box;
+  position: relative;
 }
 
 nav .container_link{
