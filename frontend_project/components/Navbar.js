@@ -15,7 +15,7 @@ export default function Navbar (){
     
     return (
         <nav >
-            <div>
+            <div className="nav_img_wrapper">
                 {/* logo */}
                 <Image src="/logo.png" width={30} height={34} alt="loco" />
             </div>

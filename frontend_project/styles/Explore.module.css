@@ -14,9 +14,25 @@
     width: fit-content;
     min-width: 690px;
     height: fit-content;
-    min-height: 100dvh;
+    max-height: 100dvh;
     padding: 40px 10px;
     gap: 30px;
+    overflow-y: auto;
+}
+
+.search_wrapper::-webkit-scrollbar{
+    width: 4px;
+    
+}
+
+.search_wrapper::-webkit-scrollbar-thumb{
+    
+    background-color: transparent;
+    background-color: #B7BCF3;
+}
+
+.search_wrapper::-webkit-scrollbar-thumb:hover{
+    background-color: #2D3DDF;
 }
 
 .search_wrapper > input{
@@ -182,6 +198,8 @@
     width: 100%;
     height: fit-content;
     gap: 16px;
+    overflow-y: auto;
+    flex-direction: column;
 }
 
 .search_item{
@@ -189,11 +207,15 @@
     width: 100%;
     height: fit-content;
     min-height: 173px;
+    gap: 20px;
+    border: 1px solid #D1D1D1;
+    align-items: center;
 }
 
 .search_item .item_img_wrapper{
     display: flex;
-    width: 197px;
+    width: fit-content;
+    min-width: 197px;
     height: 173px;
     overflow: hidden;
     
@@ -203,18 +225,175 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    border-radius: 5px;
 }
 
 .item_info_wrapper{
     display: flex;
     width: 100%;
     height: fit-content;
+    
 }
 .item_info_wrapper > div{
     display: flex;
     width: inherit;
     height: inherit;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 }
+.item_info_wrapper > div >div{
+    display: flex;
+    width: fit-content;
+    max-width: 100%;
+    height: fit-content;
+    flex-direction: column;
+    gap: 2px;
+}
+.item_info_wrapper > div >div >h5{
+    display: flex;
+    width: fit-content;
+    max-width: 100%;
+    height: 27px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #221F3C;
+    text-wrap: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.item_info_wrapper > div >div >h3{
+   width: fit-content;
+   max-width: 100%;
+   height: 24px;
+   font-size: 16px;
+   font-weight: 600;
+   color: #2D3DDF;
+   margin: auto 0px;
+   margin-top: 10px;
+}
+.star_container{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    
+}
+.star_container svg{
+    width: 12px;
+    height: 12px;
+}
+.review_container{
+    display: flex;
+    width: fit-content;
+    max-width: 100%;
+    gap: 16px;
+    margin-top: 6px;
+}
+.review_container >div{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    min-width: 42px;
+    background-color: #FF6969;
+    border: none;
+    border-radius: 30px;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 8px ;
+}
+.review_container >div svg{
+    width: 10px;
+    height: 10px;
+}
+.review_container >div p{
+    width: fit-content;
+    height: 18px;
+    font-size:12px ;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin: auto;
+}
+.review_container >p{
+    width: fit-content;
+    max-width: 100%;
+    height: 21px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #A8A8A8;
+    margin: auto;
+}
+
+.amenities_wrapper{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    max-width: 100%;
+    height: fit-content;
+    gap: 4px;
+}
+.amenities_wrapper > h5{
+    width: fit-content;
+    max-width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    color: #A8A8A8;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: auto 0px;
+}
+.amenities_wrapper > div{
+    display: flex;
+    width: fit-content;
+    max-width: 100%;
+    height: fit-content;
+    gap: 20px;
+}
+.amenities_wrapper > div >div{
+    display: flex;;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 4px 16px 0px #0000003C;
+}
+
+.book_now_wrapper{
+    
+    display: flex;
+    height: 173px;
+    width:  64px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.book_now_wrapper button{
+    rotate: 90deg;
+    display: flex;
+    width: 173px;
+    height: 64px;
+    /* position: absolute; */
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    right: -55px;
+    top: -32px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFFFFF;
+    background-color: #2D3DDF;
+}
+
+
 
 
 /* tour */
@@ -232,7 +411,7 @@
     overflow: hidden;
     border: none;
     border-radius: 40px 0px 0px 40px;
-    padding: 100px 40px;
+    padding: 100px 60px;
     justify-content: flex-end;
     background: linear-gradient(180deg, rgba(45, 61, 223, 0) 0%, #171F70 100%);
 

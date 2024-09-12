@@ -85,5 +85,82 @@ nav .container_link ul{
   height: 100dvh;
   overflow: hidden;
   gap: 30px;
+
+  
+}
+.app-container > div{
+  display: flex;
+  width: inherit;
+  height: inherit;
+  position: relative;
+  /* justify-content: flex-start;
+  align-items: flex-start; */
+}
+
+@media (width<=390px){
+  nav{
+    display: flex;
+    flex-direction: row;
+    width: 100dvw;
+    height: fit-content;
+    min-height: 100px;
+    background-color: #2D3DDF;
+    border-radius: 40px 40px 0px 0px;
+    padding: 6px;
+    justify-content: center;
+    align-items: flex-start;
+    position:sticky ;
+  }
+  .nav_img_wrapper{
+    display: none;
+  }
+  nav .container_link{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    max-height: 100%;
+    justify-content: center;
+  }
+  nav .container_link ul{
+    display: flex;
+    flex-direction: row;
+    width:  fit-content;
+    height: 100%;
+    gap: 16px;
+    list-style: none;
+    /* justify-content: space-between; */
+    margin: 0px;
+    padding: 0px;
+    
+  }
+  .container_link ul li a{
+    width: 68px;
+    height: 68px;
+  }
+
+  .container_link ul li h4{
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .app-container{
+    display: flex;
+    flex-direction: column-reverse;
+
+    width: 100%;
+    height: 100dvh;
+    overflow: hidden;
+    gap: 0px;
+    
+  }
+  .app-container > div{
+    display: flex;
+    flex-direction: column-reverse;
+    width: inherit;
+    height: inherit;
+    position: relative;
+    /* justify-content: flex-start;
+    align-items: flex-start; */
+  }
 }
 

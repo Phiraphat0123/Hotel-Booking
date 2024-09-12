@@ -16,7 +16,7 @@ export default function SearchItem (){
                             Hotel JW Marriott
                         </h5>
                         {/* star */}
-                        <div>
+                        <div className={styles.star_container}>
                             <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.999" d="M6 10.146L9.708 12.5L8.727 8.06L12 5.075L7.685 4.685L6 0.5L4.315 4.685L0 5.075L3.273 8.06L2.292 12.5L6 10.146Z" fill="#FFC362"/>
                             </svg>
@@ -25,9 +25,12 @@ export default function SearchItem (){
                             </svg>
                         </div>
                         {/* review */}
-                        <div>
+                        <div className={styles.review_container}>
                             <div>
-                                4.9
+                                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.06598 8.539L8.15598 10.5L7.33898 6.8L10.066 4.313L6.46598 3.988L5.06598 0.5L3.66598 3.988L0.065979 4.313L2.79398 6.8L1.97598 10.5L5.06598 8.539Z" fill="white"/>
+                                </svg>
+                                <p>4.9</p>
                             </div>
                             <p>
                                 1366 Reviews
@@ -35,7 +38,7 @@ export default function SearchItem (){
                         </div>
 
                         {/* amenities */}
-                        <div>
+                        <div className={styles.amenities_wrapper}>
                             <h5>
                                 Amenities
                             </h5>
@@ -77,10 +80,16 @@ export default function SearchItem (){
                                 </div>
                             </div>
                         </div>
+                        {/* price per night */}
+                        <h3>
+                            1,000/night
+                        </h3>
                     </div>
-                    <button>
-                        Book Now
-                    </button>
+                    <div className={styles.book_now_wrapper}>
+                        <button>
+                            Book Now
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

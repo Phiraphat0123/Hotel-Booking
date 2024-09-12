@@ -123,7 +123,7 @@ const  hotels =[
         location:"Thailand",
         roomTypes:[
             {
-                name:"Deluxe Room",
+                roomId:"Deluxe Room",
                 price:1500,
                 night:1,
                 support:1,

@@ -164,6 +164,7 @@ export default function Explore (){
                         <div>
                             {/* search item */}
                             <SearchItem  />
+                            <SearchItem  />
                         </div>
                     </div>
                 </div>
