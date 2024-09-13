@@ -1,9 +1,11 @@
 import styles from "@/styles/Payment.module.css"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import PaymentDone from "@/components/PaymentDone"
 import Image from "next/image"
 import Router from "next/router"
 import { useRouter } from "next/router"
+import { HotelContext } from "@/dataContexts/hotelContext"
+import calculateDaysBetween from "@/js-functions/calculateDayBetween"
 export default function Payment (){
     const [isPay,setIsPay]=useState(false)
     const router =useRouter()
@@ -16,12 +18,13 @@ export default function Payment (){
     const [dataLoaded,setDataLoaded] =useState(false)
     const [payment,setPayment]=useState(null)
 
+    const {checkIn,checkOut,roomAmount}=useContext(HotelContext)
     useEffect(()=>{
         if(room_id){
             const fetchDetail=async()=>{
                 try{
                     // console.log(`${process.env.NEXT_PUBLIC_BACK_API}/api/hotels/review/${hotelId}?room_id=${room_id}&night_need=2`)
-                    const res = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}/api/hotels/review/${hotel_id}?room_id=${room_id}&night_need=2`)
+                    const res = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}/api/hotels/review/${hotel_id}?room_id=${room_id}&night_need=${calculateDaysBetween(checkOut,checkIn)}&room_amount=${roomAmount}`)
                     if(!res.ok){
                         throw new Error('Failed to fetch hotel data')
                     }

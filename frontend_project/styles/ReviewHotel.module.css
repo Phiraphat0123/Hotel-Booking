@@ -10,7 +10,9 @@
     background-color: #FFFFFF;
     gap: 52px;
 }
-
+.mobile_title_wrapper{
+    display: none;
+}
 .search_wrapper{
     display: flex;
     flex-direction: column;
@@ -126,6 +128,7 @@
     padding: 25px;
     border-radius: 20px;
 }
+
 .my_info_container{
     display: inherit;
     width: 100%;
@@ -180,6 +183,9 @@
     align-items: center;
     background-color: #B7BCF3;
     border-radius: 5px;
+}
+.payment_wrapper_mobile{
+    display: none;
 }
 /* guest */
 .guest_wrapper{
@@ -435,4 +441,449 @@
     font-size: 16px;
     font-weight: 500 ;
     color:  #0000008C;
+}
+
+@media (width<=390px){
+
+    .review_hotel_wrapper{
+        padding: 0px ;
+        gap: 0px;
+        position: relative;
+    }
+    .mobile_title_wrapper{
+        display: flex;
+        width: 100%;
+        height: 48px;
+        min-height: 48px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 99;
+        background-color: #FFFFFF;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        
+    }
+    .mobile_title_wrapper>button{
+        display: flex;
+        width: 32px;
+        height: 32px;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        background-color: transparent;
+    }
+    .mobile_title_wrapper>button svg{
+        width: 24px;
+        height: 24px;
+    }
+    .mobile_title_wrapper>h3{
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        height: fit-content;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 600;
+        color: #221F3C;
+        ;
+    }
+    .mobile_title_wrapper>div{
+        display: flex;
+        width: 32px;
+        height: 32px;
+    }
+    .search_wrapper{
+        gap: 10px;
+        padding: 10px 25px ;
+        z-index: 0;
+        background-color: #F4F7FF;
+        position: relative;
+
+    }
+    .review_hotel{
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .hotel_info{
+        display: flex;;
+        flex-direction: column;
+        width: 100%;
+        min-width: 0px;
+        height: fit-content;
+        gap: 20px;
+        padding: 10px 25px ;
+        align-items: center;
+    }
+    .review_booking{
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .booking_info{
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        height: fit-content;
+        flex-direction: column;
+    }
+    .booking_info > h5{
+        height: 24px;
+        font-size: 16px;
+    }
+    .booking_info >div{
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        height: fit-content;
+        flex-direction: column;
+    }
+    .hotel_name {
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        height: fit-content;
+        align-items: center;
+        gap: 10px;
+    }
+    .hotel_name >h6{
+        height: 24px;
+        font-size: 16px;
+    }
+    .hotel_location{
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        height: fit-content;
+        gap: 4px;
+        flex-direction: column;
+    }
+    .hotel_location >p{
+        font-size: 14px;
+    }
+    .img_wrapper{
+        display: flex;
+        width: 100%;
+        height: 155px;
+        justify-content: center;
+        align-items: center;
+    }
+    .my_info_wrapper{
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        min-height: 204px;
+        background-color: #F4F7FF;
+        padding: 12px;
+        border-radius: 5px;
+        justify-content: center;
+        align-items: center;
+    }
+    .my_info_container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        /* max-width: 100%; */
+        height: fit-content;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        
+    }
+    .my_info_container >div{
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        max-width: 100%;
+        height: fit-content;
+        margin: auto;
+    }
+    .my_info_container >div h5{
+        font-size: 16px;
+        /* margin: auto; */
+    }
+    .my_info_container >div p:nth-child(1){
+        font-size: 14px;
+    }
+    .my_info_container >div p:nth-child(3){
+        font-size: 14px;
+    }
+    .my_info_container >div h6{
+        font-size: 16px;
+    }
+    .my_info_container >div:nth-child(2){
+        display: flex;
+        width: 131px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        background-color: #B7BCF3;
+        border-radius: 5px;
+    }
+    .payment_wrapper_mobile{
+        display: flex;
+        width: 100%;
+        min-width: 0px;
+        height: fit-content;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 18px;
+        margin-right: 0px;
+    }
+    .payment_container{
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        flex-direction: column;
+        gap:10px ;
+    }
+    .payment_container >div{
+        display: flex;
+        width: 100%;
+        height: 21px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .payment_container >div h6{
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        height: fit-content;
+        font-size: 14px;
+        font-weight:400;
+        color: #0000008C;
+        align-items: center
+    }
+    .payment_container >div p{
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        height: fit-content;
+        font-size: 14px;
+        font-weight:500;
+        color: #B7BCF3;
+        align-items: center;
+    }
+    .payment_container >div h5{
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        height: fit-content;
+        font-size: 16px;
+        font-weight:700;
+        align-items: center;
+    }
+    .payment_container >div h5:nth-child(1){
+        color: #221F3C;
+    }
+    .payment_container >div h5:nth-child(2){
+        color: #2D3DDF;
+    }
+    /* policy */
+    .policy_wrapper{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: fit-content;
+        padding: 10px;
+        box-shadow: 0px 3px 6px 0px #00000029;
+        gap: 4px;
+        border-radius: 10px;
+    }
+    .policy_wrapper> h6{
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        height: 24px;
+        color: #221F3C;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .policy_wrapper> div{
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .policy_wrapper>div>div{
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        gap: 10px;
+        flex-direction: column;
+    }
+    .policy_wrapper> div >div>h6{
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        height: 21px;
+        color: #221F3C;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .policy_wrapper> div >div> p{
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        height: fit-content;
+        color: #0000008C;
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    .policy_wrapper> div>button{
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        height: fit-content;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        margin-bottom: 0px;
+        font-size: 14px;
+        font-weight: 500 ;
+        color:  #0000008C;
+    }
+
+    /* guest */
+    .hotel_info .guest_wrapper{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: fit-content;
+        gap: 10px;
+        /* order: 2; */
+    }
+    .guest_wrapper >h5{
+        width: fit-content;
+        max-width: 100%;
+        height: 24px;
+        color: #221F3C;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .guest_list_wrapper{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: fit-content;
+        gap: 10px;
+    }
+    .guest_list{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: fit-content;
+        gap: 10px;
+    
+    }
+    .guest_item{
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .guest_item >div{
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .guest_item >div input{
+        display: flex;
+        width: 100%;
+        height: 40px;
+        padding: 8px 16px;
+        border: 1px solid #B7BCF3;
+        border-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 400;
+        color:  #0000008C;
+    ;
+    }
+    .guest_list_wrapper > button{
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        height: 21px;
+        background-color: #FFFFFF;
+        color: #221F3C;
+        font-size: 14px;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+    }
+    .special_wrapper{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: fit-content;
+        gap: 30px;
+    }
+    .special_wrapper>div{
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        flex-direction: column;
+        gap: 10px;
+    
+    }
+    .special_wrapper>div >h5{
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        height: 24px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #221F3C;
+        align-items: center;
+    }
+    .special_wrapper>div textarea{
+        width: 100%;
+        height: 100px;
+        padding: 10px 20px;
+        resize: none;
+        border: 1px solid #B7BCF3;
+        border-radius: 5px;
+        background-color: #FFFFFF;
+        font-size: 14px;
+        font-weight: 400;
+        color:  #0000008C;
+    
+    }
+    .special_wrapper >button{
+        display: flex;
+        width: 100%;
+        height: 48px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #FFFFFF;
+        background-color: #2D3DDF;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    /* payment */
+    .payment_wrapper{
+        /* order: 1; */
+        display: none;
+    }
 }

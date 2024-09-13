@@ -61,7 +61,7 @@ export default function Hotels (){
                 )
             })} */}
             <div className={styles.mobile_title_wrapper}>
-                <button onClick={()=>Router.back()}>
+                <button onClick={()=>router.back()}>
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <mask id="mask0_8_1680"  maskUnits="userSpaceOnUse" x="4" y="4" width="24" height="24">
                         <path d="M4 4L4 28H28V4H4Z" fill="white"/>

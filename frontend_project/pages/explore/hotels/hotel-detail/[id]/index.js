@@ -44,6 +44,25 @@ export default function HotelDetail ({hotel}){
     // context
     return (
         <div className={styles.hotel_detail_wrapper}>
+            <div className={styles.mobile_title_wrapper}>
+                <button onClick={()=>router.back()}>
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_8_1680"  maskUnits="userSpaceOnUse" x="4" y="4" width="24" height="24">
+                        <path d="M4 4L4 28H28V4H4Z" fill="white"/>
+                        </mask>
+                        <g mask="url(#mask0_8_1680)">
+                        <path d="M18.9811 23.373L11.6074 15.9997L18.9811 8.625L20.3958 10.0397L14.4355 15.9997L20.3958 21.9596L18.9811 23.373Z" fill="black"/>
+                        </g>
+                    </svg>
+                </button> 
+                <h3>
+                    Hotel details
+                </h3>
+                <div>
+
+                </div>
+            </div>
+
             <div className={styles.search_wrapper}>
                 <SearchBar />
                 <FilterSearchBar />
