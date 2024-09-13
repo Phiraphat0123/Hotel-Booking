@@ -36,7 +36,7 @@ router.get("/detail/:id",(req,res)=>{
 
 //get hotel detail
 router.get("/search",(req,res)=>{
-    const {location, checkIn, checkOut, adult, children ,roomAmount}=req.query
+    const {location, checkIn, checkOut, adult, children ,room_amount}=req.query
     
     if(location==undefined&&adult==undefined&&children==undefined){
         return res.status(400).json({msg:"missing keyword for searching"})
