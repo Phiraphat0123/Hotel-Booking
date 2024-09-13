@@ -23,29 +23,32 @@ export function HotelProvider  ({children}){
     const [location,setLocation] =useState("")
     const [checkIn,setCheckIn]=useState(toDay)
     const [checkOut,setCheckOut]=useState(toMorrow)
-    const [adultAmount,setAdultAmount]=useState(0)
+    const [adultAmount,setAdultAmount]=useState(1)
     const [childrenAmount,setChildrenAmount]=useState(0)
     const [roomAmount,setRoomAmount]=useState(1)
     const [today,setToday]=useState(toDay)
 
     useEffect(()=>{
-        if(!childrenAmount){
-            setChildrenAmount(0)
-        }else{
-            setChildrenAmount(parseInt(childrenAmount))
-        }
+        // if(!childrenAmount){
+        //     setChildrenAmount(0)
+        // }
+        // else{
+        //     setChildrenAmount(parseInt(childrenAmount))
+        // }
 
-        if(!roomAmount){
-            setRoomAmount(1)
-        }else{
-            setRoomAmount(parseInt(roomAmount))
-        }
+        // if(!roomAmount){
+        //     setRoomAmount(1)
+        // }
+        // else{
+        //     setRoomAmount(parseInt(roomAmount))
+        // }
 
-        if(!adultAmount){
-            setAdultAmount(0)
-        }else{
-            setAdultAmount(parseInt(adultAmount))
-        }
+        // if(!adultAmount){
+        //     setAdultAmount(0)
+        // }
+        // else{
+        //     setAdultAmount(parseInt(adultAmount))
+        // }
 
     },[roomAmount,adultAmount,childrenAmount])
     return (
