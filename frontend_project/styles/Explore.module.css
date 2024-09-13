@@ -17,7 +17,7 @@
     max-height: 100dvh;
     padding: min(2.083vw,40px) min(0.521vw,10px);
     gap: min(1.563vw,30px);
-    /* overflow-y: auto; */
+    overflow-y: auto;
 }
 
 .search_wrapper::-webkit-scrollbar{
