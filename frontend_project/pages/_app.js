@@ -6,7 +6,7 @@ export default function App({ Component, pageProps }) {
   return (
     
       <div className="app-container">
-        <HotelProvider>
+        <HotelProvider >
           <Layout>
             <Component {...pageProps} />
           </Layout>

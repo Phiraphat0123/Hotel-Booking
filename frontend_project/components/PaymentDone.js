@@ -17,7 +17,7 @@ export default function PaymentDone (){
                             </p>
                         </div>
                         <Link href="/">
-                            {/* Home */}
+                            
                         </Link>
                     </div>
                 </div>

@@ -21,9 +21,9 @@ export default function isShowPeopleInput ({props}){
             </div>
             
             <div>
-                <input type="number" onChange={(e)=>setAdultAmount(e.target.value)} value={adultAmount}/>
-                <input type="number" onChange={(e)=>setChildrenAmount(e.target.value)} value={childrenAmount}/>
-                <input type="number" onChange={(e)=>setRoomAmount(e.target.value)} value={roomAmount} />
+                <input type="number" onChange={(e)=>setAdultAmount(e.target.value)} value={adultAmount} min={0}/>
+                <input type="number" onChange={(e)=>setChildrenAmount(e.target.value)} value={childrenAmount} min={0}/>
+                <input type="number" onChange={(e)=>setRoomAmount(e.target.value)} value={roomAmount} min={0} />
             </div>
         </div>
     )

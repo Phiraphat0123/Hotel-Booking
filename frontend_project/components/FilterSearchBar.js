@@ -19,7 +19,8 @@ export default function FilterSearchBar (){
         checkOut,setCheckOut,
         adultAmount,setAdultAmount,
         childrenAmount,setChildrenAmount,
-        roomAmount,setRoomAmount
+        roomAmount,setRoomAmount,
+        today
     } =useContext(HotelContext)
 
 
@@ -42,7 +43,7 @@ export default function FilterSearchBar (){
                         
                         { checkIn&&newFormatDate(checkIn.substring(8,10),checkIn.substring(5,7),checkIn.substring(0,4))}
                     </button>
-                    {isShowCheckInInput&&<ShowInputDate dateSelected={checkIn} onSetDate={setCheckIn} labelText="Check-in"  />}
+                    {isShowCheckInInput&&<ShowInputDate dateSelected={checkIn} onSetDate={setCheckIn} labelText="Check-in" maxLength={checkOut} minLength={today}  />}
                 </div>
 
                 {/* check out */}
@@ -52,7 +53,7 @@ export default function FilterSearchBar (){
                         
                         { checkOut&&newFormatDate(checkOut.substring(8,10),checkOut.substring(5,7),checkOut.substring(0,4))}
                     </button>
-                    {isShowCheckOutInput&&<ShowInputDate dateSelected={checkOut} onSetDate={setCheckOut} labelText="Check-out"  />}
+                    {isShowCheckOutInput&&<ShowInputDate dateSelected={checkOut} onSetDate={setCheckOut} labelText="Check-out" minLength={checkIn} />}
                 </div>
                 
             </div>
@@ -68,6 +69,7 @@ export default function FilterSearchBar (){
                     adultAmount,setAdultAmount,
                     childrenAmount,setChildrenAmount,
                     roomAmount,setRoomAmount}}
+                    
                 />}
             </div>
             

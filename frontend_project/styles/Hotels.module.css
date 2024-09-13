@@ -10,6 +10,9 @@
     
 }
 
+.mobile_title_wrapper{
+    display: none;
+}
 .hotels_container{
     display: flex;
     flex-direction: column;
@@ -21,7 +24,11 @@
 }
 
 /* searchbar */
-.search_bar_wrapper{
+.search_bar_wrapper:nth-child(2){
+    display: none;
+}
+
+.search_bar_wrapper:nth-child(1){
     display: flex;
     width: 100%;
     height: fit-content;
@@ -60,7 +67,7 @@
 .hotels_container .filter_container{
     display: flex;
     width: 100%;
-    height: fit;
+    height: fit-content;
     justify-content: space-between;
     align-items: center;
 }
@@ -251,4 +258,194 @@
     font-weight: 400;
     color: #221F3C;
     text-wrap: wrap;
+}
+
+@media (width<=390px){
+    .hotels_wrapper{
+         
+        min-height: 0px;
+        padding: 0px;
+        overflow-y:auto;
+        /* gap: 20px; */
+        justify-content: none;
+        flex-direction: column;
+        
+    }
+
+    .mobile_title_wrapper{
+        order: 1;
+        display: flex;
+        width: 100%;
+        height: 48px;
+        min-height: 48px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        
+    }
+    .mobile_title_wrapper>button{
+        display: flex;
+        width: 32px;
+        height: 32px;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        background-color: transparent;
+    }
+    .mobile_title_wrapper>button svg{
+        width: 24px;
+        height: 24px;
+    }
+    .mobile_title_wrapper>h3{
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        height: fit-content;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 600;
+        color: #221F3C;
+        ;
+    }
+    .mobile_title_wrapper>div{
+        display: flex;
+        width: 32px;
+        height: 32px;
+    }
+
+    /* container */
+    .hotels_container{
+        order: 4;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        max-width: 100%;
+        min-width: 0;
+        gap: 10px;
+        padding: 30px;
+        
+    }
+
+    
+    /* searchbar */
+    .search_bar_wrapper:nth-child(1){
+        display: none;
+    }
+    .search_bar_wrapper:nth-child(2){
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        gap: 0px;
+        /* position: sticky; */
+        order: 2;
+        padding: 10px 30px;
+    }
+    .search_bar_wrapper >button{
+        display: none
+    }
+    .search_bar_wrapper > input{
+        display: flex;
+        width: 100%;
+        height: 44px;
+        font-weight: 14px;
+        padding: 6px 12px;
+        border-radius: 10px;
+    }
+
+    /* filter */
+    .hotels_container .filter_container{
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        flex-direction: column;
+        justify-content: none;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .filter_container >h5{
+        max-width: 100%;
+        height: 24px;
+        font-size: 16px ;
+    }
+    .filter_container > div{
+        display: flex;
+        width: fit-content;
+        height: fit-content;
+        gap: 12px;
+    }
+    .filter_container > div >button{
+        width: 96px;
+        height: 44px;
+        border: 1px solid #2D3DDF;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .hotel_list_wrapper{
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .hotel_list{
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    /* hotel card */
+    .hotel_card{
+        width: 342px;
+        gap: 10px;
+    }
+    .hotel_card > img{
+        width: 100%;
+        height: 214px;
+        border-radius: 5px;
+    }
+    .hotel_card >div{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        height: fit-content;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 0px ;
+    }
+    .hotel_card >div >div{
+        max-width: 100%;
+    }
+    .hotel_card >div >div>h5{
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        height: 30px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 20px;
+        font-weight: 500;
+        color: #221F3C;
+    }
+
+
+
+    /* recommend */
+    .recommend_wrapper{
+        order: 3;
+        display: none;
+        width: 285px;
+        min-width:  256px;
+        height: fit-content;
+        padding-top: 70px;
+        align-items: flex-start;
+        justify-content: center;
+        border: 5px;
+    }
+
 }

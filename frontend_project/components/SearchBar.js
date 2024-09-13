@@ -1,7 +1,10 @@
 import styles from "@/styles/Hotels.module.css"
 import { useRouter } from "next/router"
+import { HotelContext } from "@/dataContexts/hotelContext"
+import { useContext } from "react"
 export default function SearchBar (){
     const router =useRouter()
+    const {location,setLocation}=useContext(HotelContext)
     return (
         // {/* search bar */}
         <div className={styles.search_bar_wrapper}>
@@ -15,7 +18,7 @@ export default function SearchBar (){
                     </g>
                 </svg>
             </button>
-            <input type="text" placeholder="Search city , Country, Place for Travel advisory" />
+            <input type="text" placeholder="Search city , Country, Place for Travel advisory" value={location} onChange={(e)=>setLocation(e.target.value)} />
         </div>
     )
 }

@@ -152,16 +152,17 @@
     outline: auto;
 }
 
-.search_input_container >div >div{
+.search_input_container >div >div, 
+.search_input_container >div >div>div{
     display: flex;
     flex-direction: row;
     width: 100%;
     height: fit-content;
 }
-.search_input_container >div >div input:nth-child(1){
+.search_input_container >div >div >div input {
     border-radius: 5px 0px 0px  5px;
 }
-.search_input_container >div >div input:nth-child(2){
+.search_input_container >div >div input {
     border-radius: 0px 5px 5px 0px;
 }
 

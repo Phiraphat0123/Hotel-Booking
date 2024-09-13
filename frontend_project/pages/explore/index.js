@@ -139,16 +139,20 @@ export default function Explore (){
                     <div className={styles.search_input_container}>
                         <div>
                             {/* location */}
-                            <input type="text" value={location} onChange={inputLocation} placeholder="Pattaya"/>
-
+                            <div>
+                                <input type="text" value={location} onChange={inputLocation} placeholder="Pattaya"/>
+                            </div>
+                            
                             {/* start-end date */}
                             <div>
-                                <input type="date" value={checkIn} onChange={inputCheckIn} />
+                                <div>
+                                    <input type="date" value={checkIn} onChange={inputCheckIn} />
+                                </div>
                                 <input type="date" value={checkOut} onChange={inputCheckOut} />
                             </div>
 
                             {/* people amount */}
-                            <input type="text" value={adultAmount} onChange={inputAdult} placeholder="2 adult ,1 children - 1 room" />
+                            <input type="text"  placeholder="2 adult ,1 children - 1 room" />
                         </div>
                         <button onClick={()=>searchClick()}>
                             Search
@@ -163,7 +167,6 @@ export default function Explore (){
                         {/* list recent searches */}
                         <div>
                             {/* search item */}
-                            <SearchItem  />
                             <SearchItem  />
                         </div>
                     </div>

@@ -88,14 +88,7 @@ nav .container_link ul{
 
   
 }
-.app-container > div{
-  display: flex;
-  width: inherit;
-  height: inherit;
-  position: relative;
-  /* justify-content: flex-start;
-  align-items: flex-start; */
-}
+
 
 @media (width<=390px){
   nav{
@@ -146,21 +139,12 @@ nav .container_link ul{
   .app-container{
     display: flex;
     flex-direction: column-reverse;
-
+    justify-content: space-between;
     width: 100%;
     height: 100dvh;
     overflow: hidden;
     gap: 0px;
     
-  }
-  .app-container > div{
-    display: flex;
-    flex-direction: column-reverse;
-    width: inherit;
-    height: inherit;
-    position: relative;
-    /* justify-content: flex-start;
-    align-items: flex-start; */
   }
 }
 

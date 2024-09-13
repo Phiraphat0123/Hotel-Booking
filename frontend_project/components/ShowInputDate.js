@@ -1,5 +1,5 @@
 import styles from "@/styles/HotelDetail.module.css"
-export default function ShowInputDate ({labelText,dateSelected,onSetDate}){
+export default function ShowInputDate ({labelText,dateSelected,onSetDate,minLength,maxLength}){
 
 
 
@@ -8,7 +8,7 @@ export default function ShowInputDate ({labelText,dateSelected,onSetDate}){
             <p>
                 {labelText}
             </p>
-            <input  type="date" value={dateSelected} onChange={(e)=>onSetDate(e.target.value)} />
+            <input  type="date" value={dateSelected} onChange={(e)=>onSetDate(e.target.value)} min={minLength} max={maxLength}  />
         </div>
     )
 }

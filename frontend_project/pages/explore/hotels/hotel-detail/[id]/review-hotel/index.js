@@ -4,33 +4,108 @@ import styles from "@/styles/ReviewHotel.module.css"
 import SearchBar from "@/components/SearchBar"
 import FilterSearchBar from "@/components/FilterSearchBar"
 import Image from "next/image"
+import { HotelContext } from "@/dataContexts/hotelContext"
+import { useContext } from "react"
+import newFormatDate from "@/js-functions/NewFormatDate"
+import calculateDaysBetween from "@/js-functions/calculateDayBetween"
+import StarList from "@/components/StarList"
+
+
 
 
  function ReviewHotel (){
     const [hotelDetail,setHotelDetail] =useState(null)
     const [dataLoaded,setDataLoaded] =useState(false)
+    const [payment,setPayment]=useState(null)
+
+    const [guestList,setGuestList]=useState([])
+    const [firstName,setFirstName]=useState("")
+    const [lastName,setLastName]=useState("")
+    const [email,setEmail]=useState("")
+    const [phoneNumber,setPhoneNumber]=useState("")
+    const [specialReq,setSpecialReq]=useState("")
+
+    const {
+        checkOut,checkIn,
+        adultAmount,childrenAmount,
+        roomAmount,
+    }=useContext(HotelContext)
+    
+
     const router =useRouter()
     const {room_id,hotel_id}=router.query
     useEffect(()=>{
-        if(room_id){
+        if(room_id,checkIn,checkOut,roomAmount){
+            
             const fetchDetail=async()=>{
                 try{
+                    let days =calculateDaysBetween(checkOut,checkIn)
                     // console.log(`${process.env.NEXT_PUBLIC_BACK_API}/api/hotels/review/${hotelId}?room_id=${room_id}&night_need=2`)
-                    const res = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}/api/hotels/review/${hotel_id}?room_id=${room_id}&night_need=2`)
+                    const res = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}/api/hotels/review/${hotel_id}?room_id=${room_id}&night_need=${days}&room_amount=${roomAmount}`)
                     if(!res.ok){
                         throw new Error('Failed to fetch hotel data')
                     }
                     const hotelData = await res.json()
                     setHotelDetail(hotelData)
                     setDataLoaded(true)
+                    setPayment(hotelData.payment)
                 }catch(err){
                     console.log(err.message)
                 }
             }   
             fetchDetail()
         }
-    },[room_id])
-    console.log("this is data fetching from review-hotel",hotelDetail)
+    },[room_id,checkIn,checkOut,roomAmount])
+    // console.log("this is data fetching from review-hotel",hotelDetail)
+
+    const toPayment=()=>{
+        let status =true
+        if(firstName.length==0){
+            alert("Please input Guest first name")
+            status =false
+        }else
+        if(lastName.length==0){
+            alert("Please input Guest last name ")
+            status =false
+
+        }else
+        if(email.length==0){
+            alert("Please input Guest Email ")
+            status =false
+
+        }else
+        if(phoneNumber.length==0){
+            alert("Please input Guest Phone number ")
+            status =false
+
+        }else
+        if(status){
+            router.push({
+                pathname:`/payment`,
+                query:{
+                    hotel_id:hotel_id,
+                    room_id:room_id
+                }
+            })
+        }
+        
+    }
+    
+    // add new guest
+    const addGuest=()=>{
+        let NewGuest={
+            firstname:firstName,
+            lastName:lastName,
+            email:email,
+            phoneNumber:phoneNumber
+        }
+        let newList = [...guestList,NewGuest]
+        setGuestList(newList)
+    }
+
+    
+
+
     return (
         <div className={styles.review_hotel_wrapper}>
             {/* <div>
@@ -46,42 +121,44 @@ import Image from "next/image"
             })}>
                 continue
             </button> */}
-
-            <SearchBar/>
-            <FilterSearchBar/>
+            <div className={styles.search_wrapper}>
+                <SearchBar/>
+                <FilterSearchBar/>
+            </div>
             {/* content */}
             <div className={styles.review_hotel}>
                 {/* hotel information */}
-                <div>
+                <div className={styles.hotel_info}>
                     {/* review your booking */}
-                    <div>
+                    <div className={styles.review_booking}>
                         {/* text */}
-                        <div>
+                        <div className={styles.booking_info}>
                             <h5>
                                 Review your booking
                             </h5>   
                             <div>
-                                <h6>
-                                    Hotel name
-                                </h6>
-                                {/* star container */}
-                                <div>
-                                    <svg width="32" height="31" viewBox="0 0 32 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path opacity="0.999" d="M15.5723 24.92L25.1513 31L22.6173 19.531L31.0723 11.819L19.9253 10.812L15.5723 0L11.2183 10.812L0.0722656 11.819L8.52727 19.531L5.99327 31L15.5723 24.92Z" fill="#DFA12D"/>
-                                    </svg>
+                                <div className={styles.hotel_name}>
+                                    <h6>
+                                        {dataLoaded&&hotelDetail.name}
+                                    </h6>
+                                    {/* star container */}
+                                    {dataLoaded&&<StarList star={hotelDetail.reviews.avg} size={31} gapSize={0} />}
                                 </div>
+
                                 {/* location */}
-                                <p>
-                                    Tambudki, Arpora, goa, Goa, India
-                                </p>
-                                <p>
-                                    This hotel is reviewed by global firm
-                                </p>
+                                <div className={styles.hotel_location}>
+                                    <p>
+                                        {dataLoaded&&hotelDetail.location}
+                                    </p>
+                                    <p>
+                                        This hotel is reviewed by global firm
+                                    </p>
+                                </div>
                             </div>
                         </div>
                         {/* image */}
-                        <div>
-                            <Image />
+                        <div className={styles.img_wrapper}>
+                            <Image src="/example_img.png" width={231} height={105} alt="hotel_img" />
                         </div>
                     </div>
                     {/* review my info */}
@@ -93,7 +170,7 @@ import Image from "next/image"
                                     Check-in
                                 </p>
                                 <h5>
-                                    Sunday 21, Dec
+                                    { checkIn&&newFormatDate(checkIn.substring(8,10),checkIn.substring(5,7),checkIn.substring(0,4))}
                                 </h5>
                                 <p>
                                     10am
@@ -101,7 +178,9 @@ import Image from "next/image"
                             </div>
                             {/* night */}
                             <div>
-                                1 night
+                                <h6>
+                                    {calculateDaysBetween(checkOut,checkIn)} night
+                                </h6>
                             </div>
 
                             {/* check out */}
@@ -110,7 +189,7 @@ import Image from "next/image"
                                     Check-out
                                 </p>
                                 <h5>
-                                    Monday 22,Dec
+                                    { checkOut&&newFormatDate(checkOut.substring(8,10),checkOut.substring(5,7),checkOut.substring(0,4))}
                                 </h5>
                                 <p>
                                     10am
@@ -118,30 +197,33 @@ import Image from "next/image"
                             </div>
                             {/* people */}
                             <div>
-                                2 Adult - 1 room
+                                <h5>
+                                    {`${adultAmount} Adult`}, {childrenAmount!=0&&`${childrenAmount} Children`} - {`${roomAmount} room`}
+                                </h5>
+                                
                             </div>
                         </div>
                     </div>
                     
                     {/* guest detail */}
-                    <div>
+                    <div className={styles.guest_wrapper}>
                         <h5>
                             Guest Details
                         </h5>
                         {/* guest list wrapper */}
-                        <div>
-                            <div>
+                        <div className={styles.guest_list_wrapper}>
+                            <div className={styles.guest_list}>
                                 {/* guest item */}
-                                <div>
+                                <div className={styles.guest_item}>
                                     {/* first & last name */}
                                     <div>
-                                        <input />
-                                        <input />
+                                        <input type="text" placeholder="First name" value={firstName} onChange={(e)=>setFirstName(e.target.value)}/>
+                                        <input type="text" placeholder="Last Name" value={lastName} onChange={(e)=>setLastName(e.target.value)}/>
                                     </div>
                                     {/* email mobile number */}
                                     <div>
-                                        <input />
-                                        <input />
+                                        <input type="text" placeholder="E-mail address" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+                                        <input type="text" placeholder="Mobile number" value={phoneNumber} onChange={(e)=>setPhoneNumber(e.target.value)}/>
                                     </div>
                                 </div>
                             </div>
@@ -151,86 +233,87 @@ import Image from "next/image"
                         </div>
                     </div>
                     {/* special Request */}
-                    <div>
+                    <div className={styles.special_wrapper}>
                         <div>
                             <h5>
                                 Special Request(optional)
                             </h5>
-                            <textarea></textarea>
+                            <textarea value={specialReq} onChange={(e)=>setSpecialReq(e.target.value)}></textarea>
                         </div>
-                        <button>
+                        <button onClick={()=>toPayment()}>
                             Continue
                         </button>
                     </div>
                 </div>
                 {/* payment display */}
-                <div>
+                <div className={styles.payment_wrapper}>
                     {/* payment detail wrapper */}
-                    <div>
+                    <div className={styles.payment_container}>
+                        {/* payment item */}
                         <div>
-                            {/* payment item */}
-                            <div>
-                                <h6>
-                                    1 room X 1 night
-                                </h6>
-                                <p>
-                                    1,000.00
-                                </p>
-                            </div>
-                            {/* payment item */}
-                            <div>
-                                <h6>
-                                    Total discount
-                                </h6>
-                                <p>
-                                    0.00
-                                </p>
-                            </div>
-                            {/* payment item */}
-                            <div>
-                                <h6>
-                                    Price after discount
-                                </h6>
-                                <p>
-                                    1,000.00
-                                </p>
-                            </div>
-                            {/* payment item */}
-                            <div>
-                                <h6>
-                                    Taxes & service fees
-                                </h6>
-                                <p>
-                                    140.00
-                                </p>
-                            </div>
-                            {/* payment item */}
-                            <div>
-                                <h6>
-                                    Total Amount
-                                </h6>
-                                <p>
-                                    1,140.00
-                                </p>
-                            </div>
+                            <h6>
+                                {roomAmount} room X {dataLoaded&&payment.night} night
+                            </h6>
+                            <p>
+                                {dataLoaded&&((payment.price*payment.night)*payment.roomAmount).toFixed(2)}
+                            </p>
+                        </div>
+                        {/* payment item */}
+                        <div>
+                            <h6>
+                                Total discount
+                            </h6>
+                            <p>
+                                {dataLoaded&&payment.discount.toFixed(2)}
+                            </p>
+                        </div>
+                        {/* payment item */}
+                        <div>
+                            <h6>
+                                Price after discount
+                            </h6>
+                            <p>
+                                {dataLoaded&&(payment.discountPrice.toFixed(2))}
+                            </p>
+                        </div>
+                        {/* payment item */}
+                        <div>
+                            <h6>
+                                Taxes & service fees
+                            </h6>
+                            <p>
+                                {dataLoaded&&(payment.tax.toFixed(2))}
+                            </p>
+                        </div>
+                        {/* payment item */}
+                        <div>
+                            <h5>
+                                Total Amount
+                            </h5>
+                            <h5>
+                                {dataLoaded&&(payment.totalPrice.toFixed(2))}
+                            </h5>
                         </div>
                     </div>
                     {/* policy */}
-                    <div>
+                    <div className={styles.policy_wrapper}>
                         <h6>
                             Cancellation Charges 
                         </h6>
                         <div>
-                            <h6>
-                                Non Refundable
-                            </h6>
-                            <p>
-                                Penalty may be charged by the airline & by MMT based on how close to departure date you cancel. View fare rules to know more.
-                            </p>
+                            <div>
+                                <h6>
+                                    Non Refundable
+                                </h6>
+                                <p>
+                                    Penalty may be charged by the airline & by MMT based on how close to departure date you cancel. View fare rules to know more.
+                                </p>
+                            </div>
+                            <button>
+                                VIEW POLICY
+                            </button>
                         </div>
-                        <button>
-                            VIEW POLICY
-                        </button>
+                        
                     </div>
                 </div>
             </div>
