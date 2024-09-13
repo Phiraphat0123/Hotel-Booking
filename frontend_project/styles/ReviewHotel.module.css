@@ -3,12 +3,12 @@
     flex-direction: column;
     width: 100%;
     height: fit-content;
-    padding: 0px 40px 10px 0px;
+    padding: 0px min(2.083vw,40px) min(0.521vw,10px) 0px;
     /* gap: 20px; */
     overflow-y: auto;
     position: relative;
     background-color: #FFFFFF;
-    gap: 52px;
+    gap: min(2.708vw,52px);
 }
 .mobile_title_wrapper{
     display: none;
@@ -18,12 +18,12 @@
     flex-direction: column;
     width: 100%;
     height: fit-content;
-    gap: 18px;
+    gap: min(0.938vw,18px);
     position: sticky;
     top: 0;
     background-color: #FFFFFF;
-    padding-top: 40px;
-    padding-bottom: 20px;
+    padding-top: min(2.083vw,40px);
+    padding-bottom: min(1.042vw,20px);
     padding-inline: 0px;
     z-index: 99;
 }
@@ -37,10 +37,10 @@
 .hotel_info{
     display: flex;;
     flex-direction: column;
-    width: 956px;
-    min-width: 956px;
+    width: min(49.792vw,956px);
+    min-width:min(49.792vw,956px);
     height: fit-content;
-    gap: 25px;
+    gap: min(1.302vw,25px);
 }
 .review_booking{
     display: flex;
@@ -61,8 +61,8 @@
     display: flex;
     width: fit-content;
     max-width: 100%;
-    height: 36px;
-    font-size: 24px;
+    height: min(1.875vw,36px);
+    font-size: min(1.25vw,24px);
     font-weight: 500;
     color: #221F3C;
 }
@@ -79,13 +79,13 @@
     max-width: 100%;
     height: fit-content;
     align-items: center;
-    gap: 10px;
+    gap: min(0.521vw,10px);
 }
 .hotel_name >h6{
     width: fit-content;
     max-width: 100%;
-    height: 33px;
-    font-size: 22px;
+    height: min(1.719vw,33px);
+    font-size: min(1.146vw,22px);
     font-weight: 600;
     color: #2D3DDF;
 }
@@ -95,13 +95,13 @@
     width: fit-content;
     max-width: 100%;
     height: fit-content;
-    gap: 6px;
+    gap: min(0.313vw,6px);
     flex-direction: column;
 }
 .hotel_location >p{
     width: fit-content;
     max-width: 100%;
-    font-size: 20px;
+    font-size: min(1.042vw,20px);
     font-weight: 400;
     color: #0000008C;
     text-wrap: wrap;
@@ -109,8 +109,8 @@
 
 .img_wrapper{
     display: flex;
-    width: 231px;
-    height: 105px;
+    width: min(12.031vw,231px);
+    height: min(5.469vw,105px);
     justify-content: center;
     align-items: center;
 }
@@ -125,8 +125,8 @@
     width: 100%;
     height: fit-content;
     background-color: #F4F7FF;
-    padding: 25px;
-    border-radius: 20px;
+    padding: min(1.302vw,25px);
+    border-radius: min(1.042vw,20px);
 }
 
 .my_info_container{
@@ -147,7 +147,7 @@
     width: fit-content;
     max-width: 100%;
     height: fit-content;
-    font-size: 20px;
+    font-size: min(1.042vw,20px);
     font-weight: 600;
     color: #221F3C;
 }
@@ -155,7 +155,7 @@
     width: fit-content;
     max-width: 100%;
     height: fit-content;
-    font-size: 16px;
+    font-size: min(0.833vw,16px);
     font-weight: 400;
     color: #0000008C;
 }
@@ -163,7 +163,7 @@
     width: fit-content;
     max-width: 100%;
     height: fit-content;
-    font-size: 18px;
+    font-size: min(0.938vw,18px);
     font-weight: 400;
     color: #0000008C;
 }
@@ -171,18 +171,18 @@
     width: fit-content;
     max-width: 100%;
     
-    font-size: 16px;
+    font-size: min(0.833vw,16px);
     font-weight: 400;
     color: #2D3DDF;
 }
 .my_info_container >div:nth-child(2){
     display: flex;
-    width: 131px;
-    height: 50px;
+    width: min(6.823vw,131px);
+    height: min(2.604vw,50px);
     justify-content: center;
     align-items: center;
     background-color: #B7BCF3;
-    border-radius: 5px;
+    border-radius: min(0.26vw,5px);
 }
 .payment_wrapper_mobile{
     display: none;
@@ -193,14 +193,14 @@
     flex-direction: column;
     width: 100%;
     height: fit-content;
-    gap: 10px;
+    gap: min(0.521vw,10px);
 }
 .guest_wrapper >h5{
     width: fit-content;
     max-width: 100%;
-    height: 30px;
+    height: min(1.563vw,30px);
     color: #221F3C;
-    font-size: 20px;
+    font-size: min(1.042vw,20px);
     font-weight: 500;
 }
 .guest_list_wrapper{
@@ -208,7 +208,7 @@
     flex-direction: column;
     width: 100%;
     height: fit-content;
-    gap: 6px;
+    gap: min(0.313vw,6px);
 }
 
 .guest_list{
@@ -216,7 +216,7 @@
     flex-direction: column;
     width: 100%;
     height: fit-content;
-    gap: 10px;
+    gap: min(0.521vw,10px);
 
 }
 .guest_item{
@@ -224,24 +224,24 @@
     width: 100%;
     height: fit-content;
     flex-direction: column;
-    gap: 10px;
+    gap: min(0.521vw,10px);
 }
 .guest_item >div{
     display: flex;
     width: 100%;
     height: fit-content;
-    gap: 10px;
+    gap: min(0.521vw,10px);
 }
 .guest_item >div input{
     display: flex;
     width: 100%;
-    height: 52px;
-    padding: 8px 12px;
+    height: min(2.708vw,52px);
+    padding: min(0.417vw,8px) min(0.625vw,12px);
     border: 1px solid #B7BCF3;
-    border-radius: 5px;
+    border-radius: min(0.26vw,5px);
     justify-content: center;
     align-items: center;
-    font-size: 18px;
+    font-size: min(0.938vw,18px);
     font-weight: 400;
     color:  #0000008C;
 ;
@@ -251,10 +251,10 @@
     display: flex;
     width: fit-content;
     max-width: 100%;
-    height: 27px;
+    height: min(1.406vw,27px);
     background-color: #FFFFFF;
     color: #221F3C;
-    font-size: 18px;
+    font-size: min(0.938vw,18px);
     font-weight: 500;
     border: none;
     cursor: pointer;
@@ -266,46 +266,46 @@
     flex-direction: column;
     width: 100%;
     height: fit-content;
-    gap: 30px;
+    gap: min(1.563vw,30px);
 }
 .special_wrapper>div{
     display: flex;
     width: 100%;
     height: fit-content;
     flex-direction: column;
-    gap: 10px;
+    gap: min(0.521vw,10px);
 
 }
 .special_wrapper>div >h5{
     display: flex;
     width: fit-content;
     max-width: 100%;
-    height: 27px;
-    font-size: 18px;
+    height: min(1.406vw,27px);
+    font-size: min(0.938vw,18px);
     font-weight: 500;
     color: #221F3C;
     align-items: center;
 }
 .special_wrapper>div textarea{
     width: 100%;
-    height: 129px;
-    padding: 10px 20px;
+    height: min(6.719vw,129px);
+    padding: min(0.521vw,10px) min(1.042vw,20px);
     resize: none;
-    border: 1px solid #B7BCF3;
-    border-radius: 5px;
+    border: min(0.052vw,1px) solid #B7BCF3;
+    border-radius: min(0.26vw,5px);
     background-color: #FFFFFF;
-    font-size: 18px;
+    font-size: min(0.938vw,18px);
     font-weight: 400;
     color:  #0000008C;
 
 }
 .special_wrapper >button{
     display: flex;
-    width: 280px;
-    height: 62px;
+    width: min(14.583vw,280px);
+    height: min(3.229vw,62px);
     border: none;
-    border-radius: 5px;
-    font-size: 22px;
+    border-radius: min(0.26vw,5px);
+    font-size: min(1.146vw,22px);
     font-weight: 500;
     color: #FFFFFF;
     background-color: #2D3DDF;
@@ -317,25 +317,25 @@
 /* payment */
 .payment_wrapper{
     display: flex;
-    width: 482px;
-    min-width: 482px;
+    width: min(25.104vw,482px);
+    min-width: min(25.104vw,482px);
     height: fit-content;
     flex-direction: column;
     align-items: flex-end;
-    gap: 25px;
-    margin-right: 100px;
+    gap: min(1.302vw,25px);
+    margin-right: min(5.208vw,100px);
 }
 .payment_container{
     display: flex;
     width: 100%;
     height: fit-content;
     flex-direction: column;
-    gap:10px ;
+    gap:min(0.521vw,10px) ;
 }
 .payment_container >div{
     display: flex;
     width: 100%;
-    height: 30px;
+    height: min(1.563vw,30px);
     justify-content: space-between;
     align-items: center;
 }
@@ -344,7 +344,7 @@
     width: fit-content;
     max-width: 100%;
     height: fit-content;
-    font-size: 20px;
+    font-size: min(1.042vw,20px);
     font-weight:400;
     color: #0000008C;
     align-items: center
@@ -355,7 +355,7 @@
     width: fit-content;
     max-width: 100%;
     height: fit-content;
-    font-size: 20px;
+    font-size: min(1.042vw,20px);
     font-weight:500;
     color: #B7BCF3;
     align-items: center;
@@ -365,7 +365,7 @@
     width: fit-content;
     max-width: 100%;
     height: fit-content;
-    font-size: 22px;
+    font-size: min(1.146vw,22px);
     font-weight:700;
     align-items: center;
 }
@@ -382,18 +382,18 @@
     flex-direction: column;
     width: 100%;
     height: fit-content;
-    padding: 10px;
-    box-shadow: 0px 3px 6px 0px #00000029;
-    gap: 4px;
-    border-radius: 10px;
+    padding: min(0.521vw,10px);
+    box-shadow: 0px min(0.156vw,3px) min(0.313vw,6px) 0px #00000029;
+    gap: min(0.208vw,4px);
+    border-radius: min(0.521vw,10px);
 }
 .policy_wrapper> h6{
     display: flex;
     width: fit-content;
     max-width: 100%;
-    height: 30px;
+    height: min(1.563vw,30px);
     color: #221F3C;
-    font-size: 20px;
+    font-size: min(1.042vw,20px);
     font-weight: 500;
 }
 .policy_wrapper> div{
@@ -401,22 +401,22 @@
     width: 100%;
     height: fit-content;
     flex-direction: column;
-    gap: 30px;
+    gap: min(1.563vw,30px);
 }
 .policy_wrapper>div>div{
     display: flex;
     width: 100%;
     height: fit-content;
-    gap: 20px;
+    gap: min(1.042vw,20px);
     flex-direction: column;
 }
 .policy_wrapper> div >div>h6{
     display: flex;
     width: fit-content;
     max-width: 100%;
-    height: 24px;
+    height: min(1.25vw,24px);
     color: #221F3C;
-    font-size: 16px;
+    font-size: min(0.833vw,16px);
     font-weight: 500;
 }
 .policy_wrapper> div >div> p{
@@ -425,7 +425,7 @@
     max-width: 100%;
     height: fit-content;
     color: #0000008C;
-    font-size: 16px;
+    font-size:  min(0.833vw,16px);
     font-weight: 400;
 }
 
@@ -437,8 +437,8 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    margin-bottom: 10px;
-    font-size: 16px;
+    margin-bottom: min(0.521vw,10px);
+    font-size: min(0.833vw,16px);
     font-weight: 500 ;
     color:  #0000008C;
 }
@@ -453,11 +453,11 @@
     .mobile_title_wrapper{
         display: flex;
         width: 100%;
-        height: 48px;
-        min-height: 48px;
+        height: min(12.308vw,48px);
+        min-height: min(12.308vw,48px);
         justify-content: space-between;
         align-items: center;
-        padding: 10px 20px;
+        padding: min(2.564vw,10px) min(5.128vw,20px);
         position: sticky;
         top: 0;
         z-index: 99;
@@ -467,16 +467,16 @@
     }
     .mobile_title_wrapper>button{
         display: flex;
-        width: 32px;
-        height: 32px;
+        width: min(8.205vw,32px);
+        height: min(8.205vw,32px);
         justify-content: center;
         align-items: center;
         border: none;
         background-color: transparent;
     }
     .mobile_title_wrapper>button svg{
-        width: 24px;
-        height: 24px;
+        width: min(6.154vw,24px);
+        height: min(6.154vw,24px);
     }
     .mobile_title_wrapper>h3{
         display: flex;
@@ -485,19 +485,19 @@
         height: fit-content;
         justify-content: center;
         align-items: center;
-        font-size: 16px;
+        font-size: min(4.103vw,16px);
         font-weight: 600;
         color: #221F3C;
         ;
     }
     .mobile_title_wrapper>div{
         display: flex;
-        width: 32px;
-        height: 32px;
+        width: min(8.205vw,32px);
+        height: min(8.205vw,32px);
     }
     .search_wrapper{
-        gap: 10px;
-        padding: 10px 25px ;
+        gap: min(2.564vw,10px);
+        padding: min(2.564vw,10px) min(6.41vw,25px) ;
         z-index: 0;
         background-color: #F4F7FF;
         position: relative;
@@ -516,8 +516,8 @@
         width: 100%;
         min-width: 0px;
         height: fit-content;
-        gap: 20px;
-        padding: 10px 25px ;
+        gap: min(5.128vw,20px);
+        padding: min(2.564vw,10px) min(6.41vw,25px) ;
         align-items: center;
     }
     .review_booking{
@@ -527,7 +527,7 @@
         justify-content: center;
         align-items: flex-start;
         flex-direction: column;
-        gap: 10px;
+        gap:  min(2.564vw,10px);
     }
     .booking_info{
         display: flex;
@@ -537,8 +537,8 @@
         flex-direction: column;
     }
     .booking_info > h5{
-        height: 24px;
-        font-size: 16px;
+        height: min(6.154vw,24px);
+        font-size: min(4.103vw,16px);
     }
     .booking_info >div{
         display: flex;
@@ -553,12 +553,12 @@
         max-width: 100%;
         height: fit-content;
         align-items: center;
-        gap: 10px;
+        gap: min(2.564vw,10px);
     }
     .hotel_name >h6{
         height: fit-content;
-        min-height: 24px;
-        font-size: 16px;
+        min-height: min(6.154vw,24px);
+        font-size: min(4.103vw,16px);
         text-wrap: wrap;
     }
     .hotel_location{
@@ -566,16 +566,16 @@
         width: fit-content;
         max-width: 100%;
         height: fit-content;
-        gap: 4px;
+        gap: min(1.026vw,4px);
         flex-direction: column;
     }
     .hotel_location >p{
-        font-size: 14px;
+        font-size: min(3.59vw,14px);
     }
     .img_wrapper{
         display: flex;
         width: 100%;
-        height: 155px;
+        height: min(39.744vw,155px);
         justify-content: center;
         align-items: center;
     }
@@ -583,10 +583,10 @@
         display: flex;
         width: 100%;
         height: fit-content;
-        min-height: 204px;
+        min-height: min(52.308vw,204px);
         background-color: #F4F7FF;
-        padding: 12px;
-        border-radius: 5px;
+        padding: min(3.077vw,12px);
+        border-radius: min(1.282vw,5px);
         justify-content: center;
         align-items: center;
     }
@@ -598,7 +598,7 @@
         height: fit-content;
         justify-content: center;
         align-items: center;
-        gap: 20px;
+        gap: min(5.128vw,20px);
         
     }
     .my_info_container >div{
@@ -610,26 +610,26 @@
         margin: auto;
     }
     .my_info_container >div h5{
-        font-size: 16px;
+        font-size: min(4.103vw,16px);
         /* margin: auto; */
     }
     .my_info_container >div p:nth-child(1){
-        font-size: 14px;
+        font-size: min(3.59vw,14px);
     }
     .my_info_container >div p:nth-child(3){
-        font-size: 14px;
+        font-size: min(3.59vw,14px);
     }
     .my_info_container >div h6{
-        font-size: 16px;
+        font-size: min(4.103vw,16px);
     }
     .my_info_container >div:nth-child(2){
         display: flex;
-        width: 131px;
-        height: 50px;
+        width: min(33.59vw,131px);
+        height: min(12.821vw,50px);
         justify-content: center;
         align-items: center;
         background-color: #B7BCF3;
-        border-radius: 5px;
+        border-radius: min(1.282vw,5px);
     }
     .payment_wrapper_mobile{
         display: flex;
@@ -638,7 +638,7 @@
         height: fit-content;
         flex-direction: column;
         align-items: flex-end;
-        gap: 18px;
+        gap: min(4.615vw,18px);
         margin-right: 0px;
     }
     .payment_container{
@@ -646,12 +646,12 @@
         width: 100%;
         height: fit-content;
         flex-direction: column;
-        gap:10px ;
+        gap:min(2.564vw,10px) ;
     }
     .payment_container >div{
         display: flex;
         width: 100%;
-        height: 21px;
+        height: min(5.385vw,21px);
         justify-content: space-between;
         align-items: center;
     }
@@ -660,7 +660,7 @@
         width: fit-content;
         max-width: 100%;
         height: fit-content;
-        font-size: 14px;
+        font-size: min(3.59vw,14px);
         font-weight:400;
         color: #0000008C;
         align-items: center
@@ -670,7 +670,7 @@
         width: fit-content;
         max-width: 100%;
         height: fit-content;
-        font-size: 14px;
+        font-size: min(3.59vw,14px);
         font-weight:500;
         color: #B7BCF3;
         align-items: center;
@@ -680,7 +680,7 @@
         width: fit-content;
         max-width: 100%;
         height: fit-content;
-        font-size: 16px;
+        font-size: min(4.103vw,16px);
         font-weight:700;
         align-items: center;
     }
@@ -696,18 +696,18 @@
         flex-direction: column;
         width: 100%;
         height: fit-content;
-        padding: 10px;
+        padding: min(2.564vw,10px);
         box-shadow: 0px 3px 6px 0px #00000029;
-        gap: 4px;
-        border-radius: 10px;
+        gap: min(1.026vw,4px);
+        border-radius: min(2.564vw,10px);
     }
     .policy_wrapper> h6{
         display: flex;
         width: fit-content;
         max-width: 100%;
-        height: 24px;
+        height: min(6.154vw,24px);
         color: #221F3C;
-        font-size: 16px;
+        font-size: min(4.103vw,16px);
         font-weight: 500;
     }
     .policy_wrapper> div{
@@ -715,22 +715,22 @@
         width: 100%;
         height: fit-content;
         flex-direction: column;
-        gap: 16px;
+        gap: min(4.103vw,16px);
     }
     .policy_wrapper>div>div{
         display: flex;
         width: 100%;
         height: fit-content;
-        gap: 10px;
+        gap: min(2.564vw,10px);
         flex-direction: column;
     }
     .policy_wrapper> div >div>h6{
         display: flex;
         width: fit-content;
         max-width: 100%;
-        height: 21px;
+        height: min(5.385vw,21px);
         color: #221F3C;
-        font-size: 14px;
+        font-size: min(3.59vw,14px);
         font-weight: 500;
     }
     .policy_wrapper> div >div> p{
@@ -739,7 +739,7 @@
         max-width: 100%;
         height: fit-content;
         color: #0000008C;
-        font-size: 12px;
+        font-size: min(3.077vw,12px);
         font-weight: 400;
     }
 
@@ -752,7 +752,7 @@
         border: none;
         cursor: pointer;
         margin-bottom: 0px;
-        font-size: 14px;
+        font-size: min(3.59vw,14px);
         font-weight: 500 ;
         color:  #0000008C;
     }
@@ -763,15 +763,15 @@
         flex-direction: column;
         width: 100%;
         height: fit-content;
-        gap: 10px;
+        gap: miN(2.564vw,10px);
         /* order: 2; */
     }
     .guest_wrapper >h5{
         width: fit-content;
         max-width: 100%;
-        height: 24px;
+        height: min(6.154vw,24px);
         color: #221F3C;
-        font-size: 16px;
+        font-size: min(4.103vw,16px);
         font-weight: 500;
     }
     .guest_list_wrapper{
@@ -779,14 +779,14 @@
         flex-direction: column;
         width: 100%;
         height: fit-content;
-        gap: 10px;
+        gap: min(2.564vw,10px);
     }
     .guest_list{
         display: flex;
         flex-direction: column;
         width: 100%;
         height: fit-content;
-        gap: 10px;
+        gap:min(2.564vw,10px);
     
     }
     .guest_item{
@@ -794,25 +794,25 @@
         width: 100%;
         height: fit-content;
         flex-direction: column;
-        gap: 10px;
+        gap: min(2.564vw,10px);
     }
     .guest_item >div{
         display: flex;
         width: 100%;
         height: fit-content;
         flex-direction: column;
-        gap: 10px;
+        gap: min(2.564vw,10px);
     }
     .guest_item >div input{
         display: flex;
         width: 100%;
-        height: 40px;
-        padding: 8px 16px;
-        border: 1px solid #B7BCF3;
-        border-radius: 5px;
+        height: min(10.256vw,40px);
+        padding: min(2.051vw,8px) min(4.103vw,16px);
+        border: min(0.256vw,1px) solid #B7BCF3;
+        border-radius: min(1.282vw,5px);
         justify-content: center;
         align-items: center;
-        font-size: 14px;
+        font-size: min(3.59vw,14px);
         font-weight: 400;
         color:  #0000008C;
     ;
@@ -821,10 +821,10 @@
         display: flex;
         width: fit-content;
         max-width: 100%;
-        height: 21px;
+        height: min(5.385vw,21px);
         background-color: #FFFFFF;
         color: #221F3C;
-        font-size: 14px;
+        font-size: min(3.59vw,14px);
         font-weight: 500;
         border: none;
         cursor: pointer;
@@ -834,35 +834,35 @@
         flex-direction: column;
         width: 100%;
         height: fit-content;
-        gap: 30px;
+        gap: min(7.692vw,30px);
     }
     .special_wrapper>div{
         display: flex;
         width: 100%;
         height: fit-content;
         flex-direction: column;
-        gap: 10px;
+        gap: min(2.564vw,10px);
     
     }
     .special_wrapper>div >h5{
         display: flex;
         width: fit-content;
         max-width: 100%;
-        height: 24px;
-        font-size: 16px;
+        height: min(6.154vw,24px);
+        font-size: min(4.103vw,16px);
         font-weight: 500;
         color: #221F3C;
         align-items: center;
     }
     .special_wrapper>div textarea{
         width: 100%;
-        height: 100px;
-        padding: 10px 20px;
+        height: min(25.641vw,100px);
+        padding: min(2.564vw,10px) min(5.128vw,20px);
         resize: none;
-        border: 1px solid #B7BCF3;
-        border-radius: 5px;
+        border: min(0.256vw,1px) solid #B7BCF3;
+        border-radius: min(1.282vw,5px);
         background-color: #FFFFFF;
-        font-size: 14px;
+        font-size: min(3.59vw,14px);
         font-weight: 400;
         color:  #0000008C;
     
@@ -870,10 +870,10 @@
     .special_wrapper >button{
         display: flex;
         width: 100%;
-        height: 48px;
+        height: min(12.308vw,48px);
         border: none;
-        border-radius: 5px;
-        font-size: 16px;
+        border-radius: min(1.282vw,5px);
+        font-size: min(4.103vw,16px);
         font-weight: 500;
         color: #FFFFFF;
         background-color: #2D3DDF;

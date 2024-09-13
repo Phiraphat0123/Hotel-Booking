@@ -81,7 +81,7 @@ export default function HotelDetail ({hotel}){
                             {/* <div> */}
                             <Image src="/example_img.png" width={199} height={151} alt="main_img" /> 
                             <button>
-                                <Image src="/example_img.png" width={197} height={151} alt="main_img" />     
+                                <Image src="/example_img.png" width={199} height={151} alt="main_img" />     
                                 
                             </button>
                             {/* </div> */}
@@ -191,15 +191,15 @@ export default function HotelDetail ({hotel}){
                             </div>
                             <div className={styles.review_item_star}>
                                 {/* housekeeping */}
-                                    <StarList star={hotel.reviews.houseKeeping} size={20} gapSize={0}  />
+                                    <StarList star={hotel.reviews.houseKeeping}   />
                                 {/* Food */}
-                                    <StarList star={hotel.reviews.food} size={20} gapSize={0}  />
+                                    <StarList star={hotel.reviews.food}   />
 
                                 {/* Service */}
-                                    <StarList star={hotel.reviews.service} size={20} gapSize={0}  />
+                                    <StarList star={hotel.reviews.service}   />
 
                                 {/* Staff */}
-                                    <StarList star={hotel.reviews.staff} size={20} gapSize={0}  />
+                                    <StarList star={hotel.reviews.staff}   />
 
                             </div>
 

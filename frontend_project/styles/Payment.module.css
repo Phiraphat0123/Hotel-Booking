@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 100%;
     height: fit-content;
-    padding: 40px 150px 0px 0px;
+    padding: min(2.083vw,40px) min(7.813vw,150px) 0px 0px;
     /* gap: 20px; */
     overflow-y: auto;
     background-color: #FFFFFF;
@@ -13,7 +13,7 @@
     display: flex;
     width: 100%;
     height: fit-content;
-    gap: 90px;
+    gap: min(4.688vw,90px);
     flex-direction: column;
 }
 .mobile_title_wrapper{
@@ -25,8 +25,8 @@
 }
 .payment_container .mobile_title_wrapper > button{
     display: flex;
-    width: 56px;
-    height: 56px;
+    width: min(2.917vw,56px);
+    height: min(2.917vw,56px);
     justify-content: center;
     align-items: center;
     border: none;
@@ -35,8 +35,8 @@
     cursor: pointer;
 }
 .payment_container .mobile_title_wrapper > button svg{
-    width: 32px;
-    height: 32px;
+    width: min(1.667vw,32px);
+    height: min(1.667vw,32px);
 }
 .mobile_title_wrapper >h3{
     display: none;
@@ -52,19 +52,19 @@
 
 .payment_selection_wrapper{
     display: flex;
-    width: 605px;
-    min-width: 605px;
+    width: min(31.51vw,605px);
+    min-width: min(31.51vw,605px);
     height: fit-content;
     flex-direction: column;
-    gap: 40px;
-    padding-left: 56px;
+    gap: min(2.083vw,40px);
+    padding-left: min(2.917vw,56px);
 }
 .payment_selection_wrapper > h3{
     display: flex;
     width: fit-content;
     max-width: 100%;
-    height: 36px;
-    font-size: 24px;
+    height: min(1.875vw,36px);
+    font-size: min(1.25vw,24px);
     font-weight: 500;
     color: #221F3C;
 }
@@ -72,9 +72,9 @@
     display: flex;
     width: 100%;
     height: fit-content;
-    gap: 40px;
+    gap: min(2.083vw,40px);
     flex-direction: column;
-    margin-left: 40px
+    margin-left: min(2.083vw,40px)
     ;
 }
 .payment_list_wrapper > button{
@@ -89,21 +89,21 @@
 }
 
 .payment_list_wrapper > button:hover{
-    padding: 16px 25px;
-    border: 1px solid #2D3DDF;
-    box-shadow: 0px 0px 16px 0px #00000029;
-    border-radius: 10px;
+    padding: min(0.833vw,16px) min(1.302vw,25px);
+    border: min(0.052vw,1px) solid #2D3DDF;
+    box-shadow: 0px 0px min(0.833vw,16px) 0px #00000029;
+    border-radius: min(0.521vw,10px);
 }
 .payment_list_wrapper > button >div{
     display: flex;
     width: fit-content;
     height: fit-content;
     align-items: center;
-    gap: 20px;
+    gap: min(1.042vw,20px);
 }
 .payment_list_wrapper > button >div img{
-    width: 59px;
-    height: 59px;
+    width: min(3.073vw,59px);
+    height: min(3.073vw,59px);
     object-fit: cover;
     object-position: center;
 }
@@ -112,14 +112,14 @@
     width: fit-content;
     max-width: 100%;
     height: fit-content;
-    font-size: 20px;
+    font-size: min(1.042vw,20px);
     font-weight: 500;
     color: #221F3C;
 }
 .payment_list_wrapper > button> svg{
     display: none;
-    width: 20px;
-    height: 20px;
+    width: min(1.042vw,20px);
+    height: min(1.042vw,20px);
 }
 .payment_list_wrapper > button:hover svg{
     display: flex;
@@ -128,21 +128,21 @@
 /* payment detail */
 .payment_detail_wrapper{
     display: flex;
-    width: 542px;
-    min-width: 542px;
+    width: min(28.229vw,542px);
+    min-width:  min(28.229vw,542px);
     height: fit-content;
     flex-direction: column;
-    gap: 10px;
+    gap: min(0.521vw,10px);
     box-shadow: 0px 0px 6px 0px #00000026;
-    padding: 25px 20px;
-    border-radius: 5px;
-    margin-top: 65px;
+    padding: min(1.302vw,25px) min(1.042vw,20px);
+    border-radius: min(0.26vw,5px);
+    margin-top: min(3.385vw,65px);
 }
 .payment_detail_list{
     display: flex;
     width: 100%;
     height: fit-content;
-    gap: 10px;
+    gap: min(0.521vw,10px);
     flex-direction: column;
 }
 .payment_detail_list >div{
@@ -157,7 +157,7 @@
     width: fit-content;
     max-width: 100%;
     height: fit-content;
-    font-size: 20px;
+    font-size: min(1.042vw,20px);
     font-weight: 400;
     color:  #0000008C;
     ;
@@ -167,7 +167,7 @@
     width: fit-content;
     max-width: 100%;
     height: fit-content;
-    font-size: 20px;
+    font-size: min(1.042vw,20px);
     font-weight: 500;
     color: #B7BCF3;
 }
@@ -183,7 +183,7 @@
     width: fit-content;
     max-width: 100%;
     height: fit-content;
-    font-size: 22px;
+    font-size: min(1.146vw,22px);
     font-weight: 700;
     
 }
@@ -307,12 +307,12 @@
         align-items: center;
     }
     .payment_container .mobile_title_wrapper{
-        height: 48px;
-        padding: 10px 20px;
+        height: min(12.308vw,48px);
+        padding: min(2.564vw,10px) min(5.128vw,20px);
     }
     .payment_container .mobile_title_wrapper > button{
-        width: 32px;
-        height: 32px;
+        width: min(8.205vw,32px);
+        height: min(8.205vw,32px);
         border: none;
         border-radius: 0;
         background-color: transparent;
@@ -326,22 +326,22 @@
         width: fit-content;
         max-width: 100%;
         height: fit-content;
-        font-size: 16px;
+        font-size: min(4.103vw,16px);
         font-weight: 600;
         color: #221F3C;
     }
     .mobile_title_wrapper> div{
         display: flex;
-        width: 32px;
-        height: 32px;
+        width: min(8.205vw,32px);
+        height: min(8.205vw,32px);
     }
     .payment{
         width: fit-content;
         flex-direction: column-reverse;
         justify-content: none;
         align-items: none;
-        padding: 12px;
-        gap: 20px;
+        padding: min(3.077vw,12px);
+        gap: min(5.128vw,20px);
     }
 
     .payment_selection_wrapper{
@@ -355,59 +355,59 @@
     }
     .payment_list_wrapper{
         width: fit-content;
-        gap: 10px;
+        gap: min(2.564vw,10px);
         margin-left: 0px
         ;
     }
     
     .payment_list_wrapper > button{
-        width: 342px;
-        height: 48px;
-        padding: 6px 12px;
+        width: min(87.692vw,342px);
+        height: min(12.308vw,48px);
+        padding: min(1.538vw,6px) min(3.077vw,12px);
     }
     .payment_list_wrapper > button:hover{
-        padding: 6px 12px;
-        border: 1px solid #2D3DDF;
-        box-shadow: 0px 0px 16px 0px #00000029;
-        border-radius: 10px;
+        padding: min(1.538vw,6px) min(3.077vw,12px);
+        border: min(0.256vw,1px) solid #2D3DDF;
+        box-shadow: 0px 0px min(4.103vw,16px) 0px #00000029;
+        border-radius: min(2.564vw,10px);
     }
     .payment_list_wrapper > button >div{
-        gap: 20px;
+        gap: min(5.128vw,20px);
     }
     .payment_list_wrapper > button >div img{
-        width: 32px;
-        height: 32px;
+        width: min(8.205vw,32px);
+        height: min(8.205vw,32px);
     }
     .payment_list_wrapper > button >div >h4{
-        font-size: 16px;
+        font-size: min(4.103vw,16px);
     }
 
     .payment_list_wrapper > button> svg{
-        width: 12px;
-        height: 12px;
+        width: min(3.077vw,12px);
+        height: min(3.077vw,12px);
     }
     /* payment detail */
     .payment_detail_wrapper{
         width: 100%;
         min-width: 0px;
-        gap: 8px;
-        padding: 12px 8px;
-        border-radius: 5px;
+        gap: min(2.051vw,8px);
+        padding: min(3.077vw,12px) min(2.051vw,8px);
+        border-radius: min(1.282vw,5px);
         margin-top: 0px;
     }
     .payment_detail_list{
-        gap: 6px;
+        gap: min(1.538vw,6px);
     }
     .payment_detail_list >div>h5{
-        font-size: 14px;
+        font-size: min(3.59vw,14px);
         font-weight: 400;
         ;
     }
     .payment_detail_list >div>p{
-        font-size: 14px;
+        font-size: min(3.59vw,14px);
     }
     .payment_detail_wrapper > div>h4{
-        font-size: 16px;
+        font-size: min(4.103vw,16px);
     }
 
 

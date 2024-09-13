@@ -8,15 +8,15 @@
 nav{
   display: flex;
   flex-direction: column;
-  width: 157px;
-  min-width: 157px;
+  width: min(8.177vw,157px);
+  min-width: min(8.177vw,157px);
   height: 100dvh;
   background-color: #2D3DDF;
   justify-content: space-between;
   border: none;;
-  border-radius: 0px 40px 40px 0px;
+  border-radius: 0px min(2.083vw,40px) min(2.083vw,40px) 0px;
   align-items: center;
-  padding: 40px;
+  padding: min(2.083vw,40px);
   box-sizing: border-box;
   position: relative;
 }
@@ -35,7 +35,7 @@ nav .container_link ul{
   max-width: 100%;
   height: fit-content;
   max-height: 100%;
-  gap: 72px;
+  gap: min(3.75vw,72px);
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -51,8 +51,8 @@ nav .container_link ul{
 .container_link ul li a{
   display: flex;
   flex-direction: column;
-  width: 68px;
-  height: 68px;
+  width: min(3.542vw,68px);
+  height:  min(3.542vw,68px);
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -60,9 +60,13 @@ nav .container_link ul{
 }
 
 .container_link ul li h4{
-  font-size: 16px;
+  font-size: min(0.833vw,16px);
   font-weight: 400;
   color: #FFFFFF;
+}
+.container_link ul li svg{
+  width: min(0.885vw,17px);
+  height: auto;
 }
 
 .link-active{
@@ -84,7 +88,7 @@ nav .container_link ul{
   width: 100%;
   height: 100dvh;
   overflow: hidden;
-  gap: 30px;
+  gap: min(1.563vw,30px);
 
   
 }
@@ -96,10 +100,10 @@ nav .container_link ul{
     flex-direction: row;
     width: 100dvw;
     height: fit-content;
-    min-height: 100px;
+    min-height: min(25.641vw,100px);
     background-color: #2D3DDF;
-    border-radius: 40px 40px 0px 0px;
-    padding: 6px;
+    border-radius: min(10.256vw,40px) min(10.256vw,40px) 0px 0px;
+    padding: min(1.538vw,6px);
     justify-content: center;
     align-items: flex-start;
     position:sticky ;
@@ -119,7 +123,7 @@ nav .container_link ul{
     flex-direction: row;
     width:  fit-content;
     height: 100%;
-    gap: 16px;
+    gap: min(4.103vw,16px);
     list-style: none;
     /* justify-content: space-between; */
     margin: 0px;
@@ -127,15 +131,18 @@ nav .container_link ul{
     
   }
   .container_link ul li a{
-    width: 68px;
-    height: 68px;
+    width: min(17.436vw,68px);
+    height: min(17.436vw,68px);
   }
 
   .container_link ul li h4{
-    font-size: 14px;
+    font-size: min(3.59vw,14px);
     font-weight: 400;
   }
-
+  .container_link ul li svg{
+    width: min(4.359vw,17px);
+    height: auto;
+  }
   .app-container{
     display: flex;
     flex-direction: column-reverse;
