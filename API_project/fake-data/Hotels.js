@@ -25,7 +25,7 @@ const  hotels =[
         ],
         reviews:{
             amount:6879,
-            avg:8.4,
+            avg:4.5,
             houseKeeping:4,
             food:4.5,
             service:4,
@@ -61,7 +61,7 @@ const  hotels =[
         ],
         reviews:{
             amount:6879,
-            avg:8.4,
+            avg:4.5,
             houseKeeping:4,
             food:4.5,
             service:4,
@@ -98,7 +98,7 @@ const  hotels =[
         ],
         reviews:{
             amount:6879,
-            avg:8.4,
+            avg:4.5,
             houseKeeping:4,
             food:4.5,
             service:4,
@@ -123,7 +123,8 @@ const  hotels =[
         location:"Thailand",
         roomTypes:[
             {
-                roomId:"Deluxe Room",
+                roomId:1,
+                name:"Deluxe Room",
                 price:1500,
                 night:1,
                 support:1,
@@ -133,7 +134,7 @@ const  hotels =[
         ],
         reviews:{
             amount:6879,
-            avg:8.4,
+            avg:4.5,
             houseKeeping:4,
             food:4.5,
             service:4,
@@ -170,18 +171,18 @@ const  hotels =[
         ],
         reviews:{
             amount:6879,
-            avg:8.4,
-            houseKeeping:4,
-            food:4.5,
-            service:4,
-            staff:4
+            avg:2,
+            houseKeeping:2,
+            food:2,
+            service:2,
+            staff:2
         },
         service:{
-            car:true,
+            car:false,
             bath:true,
             drink:true,
             wifi:true,
-            gym:true
+            gym:false
         },
         policy:"this is policy ",
         image:"main.png",
