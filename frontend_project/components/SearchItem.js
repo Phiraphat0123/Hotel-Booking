@@ -21,6 +21,15 @@ export default function SearchItem (){
                                 <path opacity="0.999" d="M6 10.146L9.708 12.5L8.727 8.06L12 5.075L7.685 4.685L6 0.5L4.315 4.685L0 5.075L3.273 8.06L2.292 12.5L6 10.146Z" fill="#FFC362"/>
                             </svg>
                             <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.999" d="M6 10.146L9.708 12.5L8.727 8.06L12 5.075L7.685 4.685L6 0.5L4.315 4.685L0 5.075L3.273 8.06L2.292 12.5L6 10.146Z" fill="#FFC362"/>
+                            </svg>
+                            <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.999" d="M6 10.146L9.708 12.5L8.727 8.06L12 5.075L7.685 4.685L6 0.5L4.315 4.685L0 5.075L3.273 8.06L2.292 12.5L6 10.146Z" fill="#FFC362"/>
+                            </svg>
+                            <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.999" d="M6 10.146L9.708 12.5L8.727 8.06L12 5.075L7.685 4.685L6 0.5L4.315 4.685L0 5.075L3.273 8.06L2.292 12.5L6 10.146Z" fill="#FFC362"/>
+                            </svg>
+                            <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.3" d="M6 10.146L9.708 12.5L8.727 8.06L12 5.075L7.685 4.685L6 0.5L4.315 4.685L0 5.075L3.273 8.06L2.292 12.5L6 10.146Z" fill="#727C8E"/>
                             </svg>
                         </div>

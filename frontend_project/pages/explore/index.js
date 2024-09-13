@@ -6,9 +6,18 @@ import PaymentDone from "@/components/PaymentDone"
 import {  HotelContext } from "../../dataContexts/hotelContext"
 import { useState,useContext } from "react"
 import { useRouter } from "next/router"
+import ShowInputDate from "@/components/ShowInputDate"
+import newFormatDate from "@/js-functions/newFormatDate"
+import ShowInputPeople from "@/components/ShowInputPeople"
 
 export default function Explore (){
     const router = useRouter();
+
+    // status
+    const [isShowPeopleInput,setIsShowPeopleInput]=useState(false)
+    const [isShowCheckInInput,setIsShowCheckInInput] =useState(false)
+    const [isShowCheckOutInput,setIsShowCheckOutInput] =useState(false)
+    
 
     // const [locationValue,setLocationValue] =useState("")
     // const [checkInValue,setCheckInValue]=useState("")
@@ -22,7 +31,8 @@ export default function Explore (){
         checkOut,setCheckOut,
         adultAmount,setAdultAmount,
         childrenAmount,setChildrenAmount,
-        roomAmount,setRoomAmount
+        roomAmount,setRoomAmount,
+        today
     }=useContext(HotelContext)
 
     // onchange function
@@ -136,28 +146,73 @@ export default function Explore (){
                     </div>
 
                     {/* search information */}
-                    <div className={styles.search_input_container}>
+                    {/* <div className={styles.search_input_container}> */}
+                    <div className={styles.filter_wrapper}>
                         <div>
-                            {/* location */}
-                            <div>
-                                <input type="text" value={location} onChange={inputLocation} placeholder="Pattaya"/>
-                            </div>
-                            
-                            {/* start-end date */}
-                            <div>
-                                <div>
-                                    <input type="date" value={checkIn} onChange={inputCheckIn} />
-                                </div>
-                                <input type="date" value={checkOut} onChange={inputCheckOut} />
+                            <input type="text" className={styles.input} value={location} onChange={(e)=>setLocation(e.target.value)} placeholder="Where are you going?" />
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.398 4C15.2947 3.99921 14.2021 4.21595 13.1826 4.63781C12.1631 5.05967 11.2368 5.67838 10.4566 6.45855C9.67642 7.23871 9.05771 8.16504 8.63585 9.18453C8.21399 10.204 7.99726 11.2967 7.99805 12.4C7.99805 18.7 16.398 28 16.398 28C16.398 28 24.798 18.7 24.798 12.4C24.7988 11.2967 24.5821 10.204 24.1602 9.18453C23.7384 8.16504 23.1197 7.23871 22.3395 6.45855C21.5593 5.67838 20.633 5.05967 19.6135 4.63781C18.594 4.21595 17.5014 3.99921 16.398 4ZM16.398 15.4C15.8047 15.4 15.2247 15.2241 14.7313 14.8944C14.238 14.5648 13.8535 14.0962 13.6264 13.5481C13.3993 12.9999 13.3399 12.3967 13.4557 11.8147C13.5714 11.2328 13.8572 10.6982 14.2767 10.2787C14.6963 9.85912 15.2308 9.5734 15.8128 9.45765C16.3947 9.34189 16.9979 9.4013 17.5461 9.62836C18.0943 9.85543 18.5628 10.2399 18.8925 10.7333C19.2221 11.2266 19.398 11.8067 19.398 12.4C19.398 13.1957 19.082 13.9587 18.5194 14.5213C17.9568 15.0839 17.1937 15.4 16.398 15.4Z" stroke="#8E8E8E" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div>
+                            {/* check in */}
+                            <div className={styles.date_input_wrapper}>
+                                {/* <input type="text" className={styles.input} placeholder="20 Dec,2020"/> */}
+                                <button className={styles.input} onClick={()=>setIsShowCheckInInput(!isShowCheckInInput)}>
+                                    
+                                    { checkIn&&newFormatDate(checkIn.substring(8,10),checkIn.substring(5,7),checkIn.substring(0,4))}
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M22.9979 8.24695H8.99792C7.89336 8.24695 6.99792 9.14238 6.99792 10.2469V24.2469C6.99792 25.3515 7.89336 26.2469 8.99792 26.2469H22.9979C24.1025 26.2469 24.9979 25.3515 24.9979 24.2469V10.2469C24.9979 9.14238 24.1025 8.24695 22.9979 8.24695Z" fill="white" stroke="#8E8E8E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19.9979 6.24695V10.2469" stroke="#8E8E8E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M11.9979 6.24695V10.2469" stroke="#8E8E8E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M6.99792 14.2469H24.9979" stroke="#8E8E8E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+
+                                </button>
+                                {isShowCheckInInput&&<ShowInputDate dateSelected={checkIn} onSetDate={setCheckIn} labelText="Check-in" maxLength={checkOut} minLength={today}  />}
                             </div>
 
-                            {/* people amount */}
-                            <input type="text"  placeholder="2 adult ,1 children - 1 room" />
+                            {/* check out */}
+                            <div className={styles.date_input_wrapper}>
+                                {/* <input type="text" className={styles.input} placeholder="21 Dec,2020"/> */}
+                                <button className={styles.input} onClick={()=>setIsShowCheckOutInput(!isShowCheckOutInput)}>
+                                    
+                                    { checkOut&&newFormatDate(checkOut.substring(8,10),checkOut.substring(5,7),checkOut.substring(0,4))}
+ 
+                                </button>
+                                {isShowCheckOutInput&&<ShowInputDate dateSelected={checkOut} onSetDate={setCheckOut} labelText="Check-out" minLength={checkIn} />}
+                            </div>
+                            
                         </div>
+
+                        {/* people input wrapper */}
+                        <div className={styles.people_input_wrapper}>
+                            {/* <input type="text" placeholder="2 adult ,0 children - 1 room"/> */}
+                            <button className={styles.input} onClick={()=>setIsShowPeopleInput(!isShowPeopleInput)}>
+                                {adultAmount} adult ,{childrenAmount} children - {roomAmount} room
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.998 25V23C20.998 21.9391 20.5766 20.9217 19.8264 20.1716C19.0763 19.4214 18.0589 19 16.998 19H8.99799C7.93712 19 6.9197 19.4214 6.16956 20.1716C5.41941 20.9217 4.99799 21.9391 4.99799 23V25" stroke="#8E8E8E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12.996 15C15.2051 15 16.996 13.2091 16.996 11C16.996 8.79086 15.2051 7 12.996 7C10.7868 7 8.99597 8.79086 8.99597 11C8.99597 13.2091 10.7868 15 12.996 15Z" stroke="#8E8E8E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M26.998 25V23C26.9973 22.1137 26.7023 21.2528 26.1594 20.5523C25.6164 19.8519 24.8561 19.3516 23.998 19.13" stroke="#8E8E8E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M19.998 7.13C20.8584 7.35031 21.621 7.85071 22.1656 8.55232C22.7102 9.25392 23.0058 10.1168 23.0058 11.005C23.0058 11.8932 22.7102 12.7561 22.1656 13.4577C21.621 14.1593 20.8584 14.6597 19.998 14.88" stroke="#8E8E8E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            {/* show for in put */}
+                            {isShowPeopleInput&&<ShowInputPeople props={{
+                                adultAmount,setAdultAmount,
+                                childrenAmount,setChildrenAmount,
+                                roomAmount,setRoomAmount}}
+                                
+                            />}
+                        </div>
+                        
+                        
                         <button onClick={()=>searchClick()}>
                             Search
                         </button>
+
                     </div>
+                    {/* </div> */}
 
                     {/* recent searches */}
                     <div className={styles.recent_search_container}>
@@ -167,6 +222,9 @@ export default function Explore (){
                         {/* list recent searches */}
                         <div>
                             {/* search item */}
+                            <SearchItem  />
+                            <SearchItem  />
+                            <SearchItem  />
                             <SearchItem  />
                         </div>
                     </div>
@@ -200,6 +258,12 @@ export default function Explore (){
                         <path d="M7.56503 6.47794C7.56528 6.35828 7.54131 6.2398 7.49456 6.12964C7.44782 6.01948 7.37926 5.91991 7.29303 5.83694L1.95003 0.493943C1.86349 0.41515 1.76228 0.354174 1.65217 0.314497C1.54207 0.274819 1.42522 0.257217 1.30831 0.262696C1.1914 0.268174 1.07672 0.296626 0.970806 0.346426C0.864893 0.396227 0.769826 0.466402 0.691032 0.552943C0.612239 0.639484 0.551263 0.740697 0.511585 0.850804C0.471908 0.96091 0.454305 1.07775 0.459784 1.19466C0.465262 1.31157 0.493715 1.42626 0.543516 1.53217C0.593317 1.63808 0.663491 1.73315 0.750032 1.81194L5.41503 6.47694L0.689032 11.2029C0.522078 11.3699 0.428284 11.5963 0.428284 11.8324C0.428284 12.0686 0.522078 12.295 0.689032 12.4619C0.855985 12.6289 1.08242 12.7227 1.31853 12.7227C1.55464 12.7227 1.78108 12.6289 1.94803 12.4619L7.29103 7.11894C7.37727 7.03597 7.44582 6.93641 7.49256 6.82625C7.53931 6.71609 7.56328 6.59761 7.56303 6.47794H7.56503Z" fill="white"/>
                         </svg>
                     </button> */}
+                    <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z" fill="white"/>
+                        <path d="M7.5 34C11.0899 34 14 31.0899 14 27.5C14 23.9101 11.0899 21 7.5 21C3.91015 21 1 23.9101 1 27.5C1 31.0899 3.91015 34 7.5 34Z" fill="white"/>
+                        <path d="M23.5 28C27.0899 28 30 25.0899 30 21.5C30 17.9101 27.0899 15 23.5 15C19.9101 15 17 17.9101 17 21.5C17 25.0899 19.9101 28 23.5 28Z" fill="white"/>
+                    </svg>
+
                 </div>
             </div>
         // </HotelProvider>

@@ -88,6 +88,7 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border: none;
     gap: 10px;
+    z-index: 99;
 }
 .date_input_container p{
     width: fit-content;
@@ -131,7 +132,7 @@
 }
 .people_input_container{
     display: flex;
-    width: 441px;
+    width: 411px;
     height: fit-content;
     /* flex-direction: column; */
     gap: 8px;

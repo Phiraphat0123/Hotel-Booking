@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { useEffect } from "react";
 export const HotelContext =createContext()
 
 export function HotelProvider  ({children}){
@@ -27,6 +28,26 @@ export function HotelProvider  ({children}){
     const [roomAmount,setRoomAmount]=useState(1)
     const [today,setToday]=useState(toDay)
 
+    useEffect(()=>{
+        if(!childrenAmount){
+            setChildrenAmount(0)
+        }else{
+            setChildrenAmount(parseInt(childrenAmount))
+        }
+
+        if(!roomAmount){
+            setRoomAmount(1)
+        }else{
+            setRoomAmount(parseInt(roomAmount))
+        }
+
+        if(!adultAmount){
+            setAdultAmount(0)
+        }else{
+            setAdultAmount(parseInt(adultAmount))
+        }
+
+    },[roomAmount,adultAmount,childrenAmount])
     return (
         <HotelContext.Provider value={{
             location,setLocation,

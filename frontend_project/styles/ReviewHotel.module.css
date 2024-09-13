@@ -556,8 +556,10 @@
         gap: 10px;
     }
     .hotel_name >h6{
-        height: 24px;
+        height: fit-content;
+        min-height: 24px;
         font-size: 16px;
+        text-wrap: wrap;
     }
     .hotel_location{
         display: flex;

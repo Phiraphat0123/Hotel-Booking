@@ -33,7 +33,7 @@ export default function Hotels (){
             const fetchDetail=async()=>{
                 try{
                     // console.log(`${process.env.NEXT_PUBLIC_BACK_API}/api/hotels/review/${hotelId}?room_id=${room_id}&night_need=2`)
-                    const res = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}/api/hotels/search?adult=${adultAmount}}&location=${location}`)
+                    const res = await fetch(`${process.env.NEXT_PUBLIC_BACK_API}/api/hotels/search?adult=${adultAmount}&children=${childrenAmount}&location=${location}&room_amount=${roomAmount}`)
                     if(!res.ok){
                         throw new Error('Failed to fetch hotel data')
                     }
